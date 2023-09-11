@@ -165,6 +165,116 @@ h4 {
   border-radius: 20px;
 }
 
+.btnLogin-popup {
+  width: 130px;
+  height: 50px;
+  background: transparent ;
+  border: 2px solid #a15656;
+  outline: none;
+  border-radius: 6px;
+  cursor:pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: 5s;
+}
+.btnLogin-popup:hover{
+  background: #fff;
+  color:#162938;
+}
+.wrapper{
+  position: relative;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgha(0, 0, 0, .5);
+}
+.input-box{
+  position:relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #162938;
+  margin: 10px 0;
+}
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #162938;
+  font-weight: 500;
+  pointer-events: none;
+  transition: .5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label {
+  top: -5px;
+}
+
+.input-box input{
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #162938;
+  font-weight: 600;
+  padding: 0 35px 0 5px;
+}
+.input-box.icon{
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color: #162938;
+  line-height: 57px;
+}
+.reminder-forgot {
+  font-size: .9em;
+  color: #162938;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+.reminder-forgot label input{
+  accent-color: #162938;
+  margin-right: 3px;
+}
+.reminder-forgot a{
+  color: #162938;
+  text-decoration: none;
+}
+.reminder-forgot a:hover{
+  text-decoration: underline;
+}
+.btn {
+  width: 10%;
+  height: 45px;
+  background: #e6d48a;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.login-register{
+  font-size: .9em;
+  color: #162938;
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+}
+.login-register p a{
+  color: #162938;
+  text-decoration: none;
+  font-weight: 600;
+}
+.login-register p a :hover{
+  text-decoration: underline;
+}
+
 .check-out {
   margin-right: 20px;
   border-right: 1px solid rgb(231, 236, 236);
