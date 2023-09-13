@@ -1,31 +1,21 @@
-/*!
- * scrollup v2.4.1
- * Url: http://markgoodyear.com/labs/scrollup/
- * Copyright (c) Mark Goodyear — @markgdyr — http://markgoodyear.com
- * License: MIT
- */
+
 (function ($, window, document) {
     'use strict';
 
-    // Main function
     $.fn.scrollUp = function (options) {
 
-        // Ensure that only one scrollUp exists
         if (!$.data(document.body, 'scrollUp')) {
             $.data(document.body, 'scrollUp', true);
             $.fn.scrollUp.init(options);
         }
     };
 
-    // Init
     $.fn.scrollUp.init = function (options) {
 
-        // Define vars
         var o = $.fn.scrollUp.settings = $.extend({}, $.fn.scrollUp.defaults, options),
             triggerVisible = false,
             animIn, animOut, animSpeed, scrollDis, scrollEvent, scrollTarget, $self;
 
-        // Create element
         if (o.scrollTrigger) {
             $self = $(o.scrollTrigger);
         } else {
@@ -35,26 +25,21 @@
             });
         }
 
-        // Set scrollTitle if there is one
         if (o.scrollTitle) {
             $self.attr('title', o.scrollTitle);
         }
 
         $self.appendTo('body');
-
-        // If not using an image display text
         if (!(o.scrollImg || o.scrollTrigger)) {
             $self.html(o.scrollText);
         }
 
-        // Minimum CSS to make the magic happen
         $self.css({
             display: 'none',
             position: 'fixed',
             zIndex: o.zIndex
         });
 
-        // Active point overlay
         if (o.activeOverlay) {
             $('<div/>', {
                 id: o.scrollName + '-active'
@@ -67,7 +52,6 @@
             }).appendTo('body');
         }
 
-        // Switch animation type
         switch (o.animation) {
             case 'fade':
                 animIn = 'fadeIn';
@@ -87,14 +71,12 @@
                 animSpeed = 0;
         }
 
-        // If from top or bottom
         if (o.scrollFrom === 'top') {
             scrollDis = o.scrollDistance;
         } else {
             scrollDis = $(document).height() - $(window).height() - o.scrollDistance;
         }
 
-        // Scroll function
         scrollEvent = $(window).scroll(function () {
             if ($(window).scrollTop() > scrollDis) {
                 if (!triggerVisible) {
@@ -119,7 +101,6 @@
             scrollTarget = 0;
         }
 
-        // To the top
         $self.click(function (e) {
             e.preventDefault();
 
@@ -129,7 +110,6 @@
         });
     };
 
-    // Defaults
     $.fn.scrollUp.defaults = {
         scrollName: 'scrollUp',      // Element ID
         scrollDistance: 700,         // Distance from top/bottom before showing element (px)

@@ -1,5 +1,4 @@
 
-//for spinner buttons  
 
 $(function ($) {
        $('#handleCounter1').handleCounter({
@@ -21,7 +20,6 @@ $(function ($) {
       
    
 
-//for datepicker
 
 addEventListener('DOMContentLoaded', function () {
 	
@@ -32,11 +30,9 @@ addEventListener('DOMContentLoaded', function () {
 		mode : 'range',
         separator: '    to   ',
         position :'bottom',
-//        hide_on_select : true,
         format: 'd b-y',
       
 	});
-//pickmeup('.range').show();
 
 
     
