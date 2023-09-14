@@ -1,109 +1,180 @@
-.btnLogin-popup {
-    width: 130px;
-    height: 50px;
-    background: transparent ;
-    border: 2px solid #a15656;
-    outline: none;
-    border-radius: 6px;
-    cursor:pointer;
-    font-size: 1.1em;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 40px;
-    transition: 5s;
-  }
-  .btnLogin-popup:hover{
-    background: #fff;
-    color:#162938;
-  }
-  .wrapper{
-    position: relative;
-    background: transparent;
-    border: 2px solid rgba(255,255,255,.5);
-    border-radius: 20px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgha(0, 0, 0, .5);
-  }
-  .input-box{
-    position:relative;
-    width: 100%;
-    height: 50px;
-    border-bottom: 2px solid #162938;
-    margin: 10px 0;
-  }
-  .input-box label {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    font-size: 1em;
-    color: #162938;
-    font-weight: 500;
-    pointer-events: none;
-    transition: .5s;
-  }
-  .input-box input:focus~label,
-  .input-box input:valid~label {
-    top: -5px;
-  }
-  
-  .input-box input{
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    color: #162938;
-    font-weight: 600;
-    padding: 0 35px 0 5px;
-  }
-  .input-box.icon{
-    position: absolute;
-    right: 8px;
-    font-size: 1.2em;
-    color: #162938;
-    line-height: 57px;
-  }
-  .reminder-forgot {
-    font-size: .9em;
-    color: #162938;
-    font-weight: 500;
-    display: flex;
-    justify-content: space-between;
-  }
-  .reminder-forgot label input{
-    accent-color: #162938;
-    margin-right: 3px;
-  }
-  .reminder-forgot a{
-    color: #162938;
-    text-decoration: none;
-  }
-  .reminder-forgot a:hover{
-    text-decoration: underline;
-  }
-  .btn {
-    width: 10%;
-    height: 45px;
-    background: #e6d48a;
-    border: none;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  .login-register{
-    font-size: .9em;
-    color: #162938;
-    text-align: center;
-    font-weight: 500;
-    margin: 25px 0 10px;
-  }
-  .login-register p a{
-    color: #162938;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .login-register p a :hover{
-    text-decoration: underline;
-  }
+{
+  box-sizing: border-box;
+}
+ 
+html {
+  overflow-y: scroll;
+}
+ 
+body {
+  background: #c1bdba;
+  font-family: "Titillium Web", sans-serif;
+}
+ 
+a {
+  text-decoration: none;
+  color: #1ab188;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+a:hover {
+  color: #179b77;
+}
+ 
+.form {
+  background: rgba(19, 35, 47, 0.9);
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+ 
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.tab-group li a:hover {
+  background: #179b77;
+  color: #ffffff;
+}
+.tab-group .active a {
+  background: #179ca6;
+  color: #ffffff;
+}
+ 
+.tab-content > div:last-child {
+  display: none;
+}
+ 
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+ 
+label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+}
+label .req {
+  margin: 2px;
+  color: #1ab188;
+}
+ 
+label.active {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
+}
+label.active .req {
+  opacity: 0;
+}
+ 
+label.highlight {
+  color: #ffffff;
+}
+ 
+input,
+textarea {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+input:focus,
+textarea:focus {
+  outline: 0;
+  border-color: #1ab188;
+}
+ 
+textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical;
+}
+ 
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+ 
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+.top-row > div:last-child {
+  margin: 0;
+}
+ 
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: #179ca6;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #179b77;
+}
+ 
+.button-block {
+  display: block;
+  width: 100%;
+}
+ 
+.forgot {
+  margin-top: -20px;
+  text-align: right;
+}
