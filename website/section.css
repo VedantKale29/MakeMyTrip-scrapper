@@ -225,6 +225,10 @@ section {
   margin-left: 30px;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
 .online-experience-btn {
   border: none;
   background-color: white;
